@@ -31,3 +31,9 @@
 - cd $SPARK_HOME && ./build/mvn -DskipTests clean package
 - $SPARK_HOME/bin/spark-shell --driver-java-options -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=4000
 - In intellij, remote debug on port 4000
+
+
+# Other useful docker commands
+docker container stop sparky
+docker container rm sparky
+docker system prune
