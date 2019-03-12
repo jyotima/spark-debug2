@@ -25,7 +25,8 @@
 - Open docker settings from system tray -> settings -> shared drives -> select all -> apply -> provide creds in pop up
 - cd C:\docker
 - docker build . -t spark
-- docker run --name sparky --hostname myhost -p 4000:4000 --mount type=bind,source="C:\docker",target=/mount -it spark
+- docker run --name sparky --hostname myhost -p 4000:4000 --mount type=bind,source="C:\docker",target=/mount -d spark
+- docker exec -it sparky /bin/bash
 - The above command will open up the bash prompt
 - ln -s /mount/spark/ $SPARK_HOME
 - cd $SPARK_HOME && ./build/mvn -DskipTests clean package
@@ -34,6 +35,6 @@
 
 
 # Other useful docker commands
-docker container stop sparky
-docker container rm sparky
-docker system prune
+- docker container stop sparky
+- docker container rm sparky
+- docker system prune
